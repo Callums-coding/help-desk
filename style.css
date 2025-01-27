@@ -1,0 +1,2602 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    background-color: #f5f5f5;
+}
+
+/* Container */
+.app-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+/* Buttons */
+.button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+/* Tickets Container */
+.tickets-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Ticket Card */
+.ticket-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.ticket-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.ticket-header h3 {
+    font-size: 18px;
+    color: #333;
+}
+
+.status {
+    padding: 4px 8px;
+    background-color: #e3f2fd;
+    color: #1976d2;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.ticket-body {
+    margin-bottom: 15px;
+}
+
+.ticket-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.computer-name {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #666;
+    font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .tickets-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+:root {
+    /* Modern Monochromatic Color Palette */
+    --primary: #1a73e8;
+    --primary-hover: #1557b0;
+    --secondary: #3c4043;
+    --success: #2d2d2d;
+    --danger: #cc0000;
+    --warning: #996600;
+    --info: #333333;
+    --background: #f5f7fa;
+    --surface: #ffffff;
+    --text: #202124;
+    --text-secondary: #5f6368;
+    --border: #dadce0;
+    --hover: #f8f8f8;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+    /* Professional Theme Updates */
+    --header-bg: #1a1a1a;
+    --content-bg: #f5f5f5;
+    --card-bg: #ffffff;
+    --text-primary: #1a1a1a;
+    --text-secondary: #5f6368;
+    --border-color: #e5e5e5;
+    --status-open: #1e8e3e;
+    --status-bg: #e6f4ea;
+
+    /* Admin Color Scheme */
+    --admin-bg: #f5f6f8;          /* Light gray background */
+    --admin-header: #1e1e1e;      /* Dark header/sidebar background */
+    --admin-text: #ffffff;        /* White text */
+    --admin-link: #2196f3;        /* Blue links */
+    --admin-badge: #2196f3;       /* Blue badge */
+    --admin-card: #ffffff;        /* White cards */
+    --admin-btn-dark: #2d2d2d;    /* Dark button background */
+
+    /* Admin Layout */
+    --admin-layout: #f5f6fa;
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.5;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.25;
+    color: var(--text);
+}
+
+h1 { font-size: 1.875rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.25rem; }
+
+/* Updated Button Styles */
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    border: 1px solid var(--primary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    line-height: 1.4;
+    white-space: nowrap;
+}
+
+/* Primary Button */
+.button-primary {
+    background-color: var(--primary);
+    color: white;
+}
+
+.button-primary:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+/* Secondary Button */
+.button-secondary {
+    background-color: transparent;
+    color: var(--primary);
+}
+
+.button-secondary:hover {
+    background-color: var(--hover);
+}
+
+/* Header Specific Buttons - All buttons in header should look the same */
+.header .button {
+    background-color: transparent;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    padding: 0.5rem 1rem;
+}
+
+.header .button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: white;
+}
+
+/* Success Button */
+.button-success {
+    background-color: var(--success);
+    color: white;
+    border-color: var(--success);
+}
+
+.button-success:hover {
+    background-color: #0ea371;
+    border-color: #0ea371;
+}
+
+/* Danger Button */
+.button-danger {
+    background-color: var(--danger);
+    color: white;
+    border-color: var(--danger);
+}
+
+.button-danger:hover {
+    background-color: #dc2626;
+    border-color: #dc2626;
+}
+
+/* Small Button Variant */
+.button-small {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.813rem;
+}
+
+/* Large Button Variant */
+.button-large {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+}
+
+/* Full Width Button */
+.button-block {
+    width: 100%;
+    justify-content: center;
+}
+
+/* Disabled State */
+.button:disabled,
+.button.disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* Icon Only Button */
+.button-icon {
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+}
+
+/* Loading State */
+.button.loading {
+    position: relative;
+    color: transparent;
+}
+
+.button.loading::after {
+    content: '';
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid;
+    border-radius: 50%;
+    border-color: currentColor transparent transparent;
+    animation: button-spin 0.6s linear infinite;
+}
+
+@keyframes button-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Modal Footer Buttons */
+.modal-footer .button {
+    min-width: 5rem;
+}
+
+/* Form Action Buttons */
+.form-actions .button {
+    min-width: 6rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 640px) {
+    .button {
+        padding: 0.5rem 1rem;
+    }
+    
+    .form-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .form-actions .button {
+        width: 100%;
+    }
+}
+
+/* Cards */
+.card {
+    background-color: var(--surface);
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+    padding: 1.5rem;
+    transition: box-shadow 0.2s;
+}
+
+.card:hover {
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary);
+}
+
+/* Forms */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    transition: all 0.2s;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(26, 26, 26, 0.1);
+}
+
+/* Tables */
+.table-container {
+    overflow-x: auto;
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--surface);
+}
+
+th {
+    background-color: var(--primary);
+    padding: 1rem;
+    text-align: left;
+    font-weight: 500;
+    color: white;
+    border-bottom: 1px solid var(--border);
+}
+
+td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border);
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover {
+    background-color: var(--hover);
+}
+
+/* Status Badges */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.status-badge.open {
+    background-color: #e6f4ea;
+    color: #1e8e3e;
+}
+
+.status-badge.in_progress {
+    background-color: #1a1a1a;
+    color: white;
+}
+
+.status-badge.pending {
+    background-color: #d4d4d4;
+    color: #1a1a1a;
+}
+
+.status-badge.resolved {
+    background-color: #2d2d2d;
+    color: white;
+}
+
+.status-badge.closed {
+    background-color: #666666;
+    color: white;
+}
+
+/* Admin Layout */
+.admin-layout {
+    display: flex;
+    min-height: calc(100vh - 73px);
+    background-color: var(--content-bg);
+}
+
+.sidebar {
+    width: 250px;
+    background: #202124;
+    border-radius: 1rem;
+    padding: 1rem;
+    height: fit-content;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.sidebar-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    transition: all 0.2s;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.sidebar-link i {
+    font-size: 1.1rem;
+    width: 1.5rem;
+}
+
+.sidebar-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-link.active {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.badge {
+    margin-left: auto;
+    background: #1a73e8;
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    min-width: 1.5rem;
+    text-align: center;
+}
+
+.admin-content {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .admin-layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        padding: 1rem 0;
+    }
+
+    .sidebar-nav {
+        flex-direction: row;
+        overflow-x: auto;
+        padding: 0 1rem;
+    }
+
+    .nav-item {
+        white-space: nowrap;
+    }
+
+    .admin-content {
+        padding: 1rem;
+    }
+}
+
+/* Loading States */
+.loading {
+    position: relative;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Tooltips */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip:hover::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.5rem;
+    background-color: var(--text);
+    color: white;
+    font-size: 0.75rem;
+    border-radius: 0.25rem;
+    white-space: nowrap;
+}
+
+/* Modern Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f5f5f5;
+    color: #333;
+    padding: 20px;
+}
+
+/* Modern Typography */
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    font-weight: 600;
+}
+
+/* Modern Form Styling */
+form {
+    background: white;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Links */
+a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+/* Error Messages */
+.error {
+    background-color: #ff6b6b;
+    color: white;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto 20px auto;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+th {
+    background-color: #f8f9fa;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+tr:hover {
+    background-color: #f8f9fa;
+}
+
+/* Registration/Login Link Container */
+p {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    form {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    input, button {
+        padding: 10px;
+    }
+}
+
+/* Header and Navigation */
+.header {
+    background-color: var(--header-bg);
+    padding: 1.25rem 0;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.header-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.header-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.header-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Updated Header Button Styles */
+.header .button {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.header .button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.header .button i {
+    margin-right: 0.5rem;
+}
+
+/* New Ticket Button Specific Style */
+.header .button.new-ticket {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.header .button.new-ticket:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .header {
+        padding: 1rem;
+    }
+    
+    .header-right {
+        flex-wrap: wrap;
+    }
+    
+    .header .button {
+        width: auto;
+    }
+}
+
+/* Ticket Details Styling */
+.ticket-details {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.ticket-info {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 6px;
+    margin: 20px 0;
+}
+
+.ticket-info p {
+    margin: 10px 0;
+    text-align: left;
+}
+
+.ticket-description {
+    margin-top: 30px;
+}
+
+.ticket-description h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.admin-actions {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+}
+
+/* Comments Styling */
+.comments-section {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.comment-form {
+    margin-bottom: 20px;
+}
+
+.comment-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    resize: vertical;
+}
+
+.comments-list {
+    margin-top: 20px;
+}
+
+.comment {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    color: #666;
+    font-size: 0.9em;
+}
+
+.comment-content {
+    line-height: 1.6;
+}
+
+.no-comments {
+    color: #666;
+    font-style: italic;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Admin Panel User Management */
+.btn-sm {
+    padding: 0.5rem;
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    margin-right: 0.5rem;
+}
+
+.btn-secondary {
+    background: #f1f3f4;
+    color: #5f6368;
+}
+
+.btn-secondary:hover {
+    background: #e8eaed;
+}
+
+.btn-danger {
+    background: #dc3545;
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #c82333;
+}
+
+.status-badge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+.status-badge.open {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.status-badge.closed {
+    background-color: #95a5a6;
+    color: white;
+}
+
+.status-badge.admin {
+    background-color: #3498db;
+    color: white;
+}
+
+.status-badge.user {
+    background-color: #95a5a6;
+    color: white;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.button.small {
+    padding: 4px 8px;
+    font-size: 0.9em;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+form.inline-form {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+td {
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.stats-list {
+    display: flex;
+    gap: 20px;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.badge {
+    background-color: #3498db;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+/* Ticket List Styling */
+.tickets-list {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.ticket-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.ticket-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.ticket-header h3 {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 1.2em;
+}
+
+.ticket-info {
+    margin-bottom: 15px;
+}
+
+.ticket-date {
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.ticket-preview {
+    color: #444;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.ticket-actions {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+}
+
+.ticket-actions .btn {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 32px;
+}
+
+.ticket-actions .btn-secondary {
+    background: #1a73e8;
+    color: white;
+}
+
+.ticket-actions .btn-danger {
+    background: #dc3545;
+    color: white;
+}
+
+.ticket-actions .btn:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.no-tickets {
+    text-align: center;
+    padding: 40px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.no-tickets p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.status-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.status-badge.open {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.status-badge.closed {
+    background-color: #95a5a6;
+    color: white;
+}
+
+/* Container for better spacing */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Status Badge Colors */
+.status-badge.open {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.status-badge.in_progress {
+    background-color: #3498db;
+    color: white;
+}
+
+.status-badge.pending {
+    background-color: #f1c40f;
+    color: white;
+}
+
+.status-badge.resolved {
+    background-color: #9b59b6;
+    color: white;
+}
+
+.status-badge.closed {
+    background-color: #95a5a6;
+    color: white;
+}
+
+/* Status Select Styling */
+.status-select {
+    padding: 4px 8px;
+    border: 2px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 0.9em;
+    background-color: white;
+    cursor: pointer;
+}
+
+.status-select:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+/* Status Form Styling */
+.status-form {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.status-select {
+    padding: 6px 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 0.9em;
+    background-color: white;
+    cursor: pointer;
+    min-width: 140px;
+}
+
+.status-select:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+.inline-form {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+/* Admin Navigation */
+.admin-nav {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #666;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    background: #f5f5f5;
+    color: #333;
+}
+
+.nav-link.active {
+    background: #3498db;
+    color: white;
+}
+
+/* Dashboard Stats */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.stat-card h3 {
+    color: #666;
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+.stat-number {
+    font-size: 2em;
+    color: #2c3e50;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Table Improvements */
+.tickets-management,
+.users-management {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+/* Status Badge for Admin */
+.status-badge.admin {
+    background-color: var(--primary);
+    color: white;
+}
+
+.status-badge.user {
+    background-color: var(--secondary);
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .admin-nav {
+        flex-direction: column;
+    }
+    
+    .nav-link {
+        text-align: center;
+    }
+}
+
+/* Admin Layout */
+.admin-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Side Navigation */
+.side-nav {
+    width: 250px;
+    background: #2c3e50;
+    color: white;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-header {
+    padding: 0 20px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-header h2 {
+    color: white;
+    margin: 0;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.nav-item:hover {
+    background-color: var(--primary-light);
+    color: white;
+}
+
+.nav-item.active {
+    background-color: var(--primary-light);
+    color: white;
+}
+
+.nav-item i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+.nav-footer {
+    margin-top: auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 30px;
+    background: #f5f6fa;
+}
+
+/* Page Header */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.page-header h1 {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 1.8em;
+}
+
+/* Filters */
+.filters {
+    display: flex;
+    gap: 15px;
+}
+
+.filter-form select {
+    padding: 8px 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    background: white;
+    min-width: 150px;
+    cursor: pointer;
+}
+
+.filter-form select:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+/* Content Card */
+.content-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .admin-layout {
+        flex-direction: column;
+    }
+
+    .side-nav {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .main-content {
+        padding: 15px;
+    }
+
+    .page-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* Create Button */
+.create-button {
+    background-color: var(--primary);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-right: 15px;
+}
+
+.create-button:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Updated Modal Styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content h2 {
+    margin: 0 0 1.5rem 0;
+    font-size: 1.25rem;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 0.875rem;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.form-actions button {
+    padding: 0.75rem 1rem;
+}
+
+/* Checkbox Styles */
+.checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid var(--border);
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.checkbox-label {
+    color: var(--text);
+    font-size: 0.875rem;
+}
+
+/* Responsive Modal */
+@media (max-width: 640px) {
+    .modal-content {
+        margin: 0;
+        min-height: 100vh;
+        max-width: none;
+        border-radius: 0;
+    }
+
+    .modal-footer {
+        position: sticky;
+        bottom: 0;
+        background-color: var(--surface);
+    }
+}
+
+/* Auth Pages */
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background);
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.auth-card {
+    padding: 2rem;
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.auth-header h1 {
+    margin-bottom: 0.5rem;
+}
+
+.auth-header p {
+    color: var(--text-light);
+}
+
+.auth-form .button-block {
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+/* Input Groups */
+.input-group {
+    position: relative;
+}
+
+.input-group i {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-light);
+}
+
+.input-group .form-input {
+    padding-left: 2.75rem;
+}
+
+/* Alerts */
+.alert {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.alert-error {
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+}
+
+/* Create Ticket Page */
+.create-ticket-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.ticket-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+    .auth-container {
+        padding: 1rem;
+    }
+
+    .create-ticket-container {
+        padding: 1rem;
+    }
+
+    .form-actions {
+        flex-direction: column-reverse;
+    }
+
+    .form-actions .button {
+        width: 100%;
+    }
+}
+
+/* Modern Select Styles */
+.select-wrapper {
+    position: relative;
+    min-width: 200px;
+}
+
+.modern-select {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    padding-right: 2.5rem;
+    font-size: 0.875rem;
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    background-color: var(--surface);
+    color: var(--text);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.modern-select:hover {
+    border-color: var(--primary);
+}
+
+.modern-select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(26, 26, 26, 0.1);
+}
+
+.select-arrow {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-light);
+    pointer-events: none;
+    transition: transform 0.2s;
+}
+
+.select-wrapper:hover .select-arrow {
+    color: var(--primary);
+}
+
+.filter-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Content Header Layout */
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 640px) {
+    .content-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+
+    .select-wrapper {
+        width: 100%;
+    }
+}
+
+/* Updated Header Button Styles */
+.header-right {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.header .button {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+}
+
+.header .button-primary {
+    background-color: transparent;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.header .button-primary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: white;
+}
+
+.header .button-secondary {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid transparent;
+}
+
+.header .button-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Layout */
+.app-container {
+    min-height: 100vh;
+    background-color: var(--content-bg);
+}
+
+/* Main Content */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.content-title {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+}
+
+.content-title h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.ticket-count {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Tickets Grid */
+.tickets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 1.5rem;
+}
+
+.ticket-card {
+    background: var(--card-bg);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ticket-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.ticket-header h3 {
+    margin: 0;
+    font-size: 1.125rem;
+    color: var(--text-primary);
+}
+
+.status-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.status-badge.open {
+    background: var(--status-bg);
+    color: var(--status-open);
+}
+
+.ticket-content {
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+}
+
+.ticket-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+.ticket-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.ticket-footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.no-tickets {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+    text-align: center;
+}
+
+.no-tickets-content {
+    max-width: 400px;
+}
+
+.no-tickets i {
+    font-size: 3rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    background: var(--background);
+    padding: 1rem;
+    border-radius: 1rem;
+    display: inline-block;
+}
+
+.no-tickets h3 {
+    margin: 0 0 0.5rem;
+    color: var(--text-primary);
+}
+
+.no-tickets p {
+    margin: 0 0 1.5rem;
+    color: var(--text-secondary);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .nav-content {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .nav-actions {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .ticket-container {
+        grid-template-columns: 1fr;
+    }
+
+    .header-title {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+/* Admin Panel Button Styles */
+.nav-buttons {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #1a73e8;
+    color: white !important; /* Force white text */
+    border: none;
+}
+
+.btn-secondary {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white !important; /* Force white text */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-primary:hover {
+    background-color: #1557b0;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Ensure top navigation has proper styling */
+.top-nav {
+    background: #202124;
+    padding: 1rem;
+    margin: -1.5rem -1.5rem 2rem -1.5rem;
+    border-radius: 0 0 1.5rem 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-content h1 {
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+/* Add these new styles for the admin panel */
+.content-section {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.section-title h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.count-badge {
+    background: #f0f0f0;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.875rem;
+    color: #666;
+}
+
+.users-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.user-card {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 1rem;
+    padding: 1.25rem;
+    transition: all 0.2s;
+}
+
+.user-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.user-card-header {
+    margin-bottom: 1rem;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user-info i {
+    font-size: 2rem;
+    color: #666;
+}
+
+.user-details h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    margin-bottom: 0.25rem;
+}
+
+.user-role {
+    font-size: 0.875rem;
+    color: #666;
+    background: #f0f0f0;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.user-meta {
+    font-size: 0.875rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.user-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.user-card-actions {
+    display: flex;
+    gap: 0.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0e0e0;
+}
+
+/* Button styles */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+}
+
+.btn-primary {
+    background: #1a73e8;
+    color: white;
+}
+
+.btn-secondary {
+    background: #f1f3f4;
+    color: #5f6368;
+    border: none;
+}
+
+.btn-danger {
+    background: #dc3545;
+    color: white;
+}
+
+.btn:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+/* Navigation styles */
+.top-nav {
+    background: #202124;
+    padding: 1rem;
+    margin: -1.5rem -1.5rem 2rem -1.5rem;
+    border-radius: 0 0 1.5rem 1.5rem;
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-content h1 {
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.nav-buttons .btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.nav-buttons .btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Add these new styles for the ticket management table */
+.tickets-table {
+    width: 100%;
+    overflow-x: auto;
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: #f8f9fa;
+    padding: 1rem;
+    text-align: left;
+    font-weight: 500;
+    color: #444;
+    border-bottom: 2px solid #e9ecef;
+}
+
+td {
+    padding: 1rem;
+    border-bottom: 1px solid #e9ecef;
+    color: #333;
+}
+
+.ticket-row:hover {
+    background: #f8f9fa;
+}
+
+.ticket-title {
+    font-weight: 500;
+    color: #1a73e8;
+}
+
+.user-info, .computer-info, .date-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #666;
+    font-size: 0.875rem;
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.status-badge.open {
+    background: #e6f4ea;
+    color: #1e8e3e;
+}
+
+.status-badge.closed {
+    background: #f1f3f4;
+    color: #5f6368;
+}
+
+.ticket-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+}
+
+.filter-select {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid #e0e0e0;
+    background: white;
+    font-size: 0.875rem;
+    color: #333;
+    cursor: pointer;
+}
+
+.header-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .tickets-table {
+        font-size: 0.875rem;
+    }
+    
+    td, th {
+        padding: 0.75rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .tickets-table {
+        overflow-x: auto;
+    }
+}
+
+/* Computer Management Styles */
+.computers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.computer-card {
+    background: white;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.computer-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.computer-info i {
+    font-size: 1.5rem;
+    color: #666;
+}
+
+.computer-info h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+    margin: 0;
+}
+
+.computer-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.computer-actions .btn {
+    width: 100%;
+}
+
+.btn-danger {
+    background: #dc3545;
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #c82333;
+}
+
+/* Add Computer Form Styles */
+.add-computer-form {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    transition: border-color 0.2s;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #1a73e8;
+    box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.1);
+}
+
+.form-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.form-actions .btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.form-actions .btn-primary {
+    background: #1a73e8;
+    color: white;
+    border: none;
+}
+
+.form-actions .btn-secondary {
+    background: #f1f3f4;
+    color: #5f6368;
+    border: none;
+}
+
+.form-actions .btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-actions .btn-primary:hover {
+    background: #1557b0;
+}
+
+.form-actions .btn-secondary:hover {
+    background: #e8eaed;
+}
+
+/* Computer Management Specific Styles */
+.add-form-container {
+    margin: 1rem 0;
+}
+
+.form-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Fix the Actions alignment */
+.list-header {
+    display: grid;
+    grid-template-columns: 2.5fr 1.5fr 1.2fr 120px;
+    padding: 1rem;
+    border-bottom: 1px solid #e0e0e0;
+    font-weight: 500;
+    color: #666;
+}
+
+.user-item {
+    display: grid;
+    grid-template-columns: 2.5fr 1.5fr 1.2fr 120px;
+    padding: 1rem;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.header-actions {
+    text-align: left;  /* Align with the content below */
+}
+
+.user-actions {
+    display: flex;
+    justify-content: flex-start; /* Align with header */
+}
+
+.btn-remove {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    min-width: 80px;
+    font-size: 0.875rem;
+    text-align: center;
+}
+
+/* Action button colors */
+.btn-sm {
+    background: #f1f3f4;  /* Default light gray */
+    color: #5f6368;
+}
+
+.btn-sm:first-child {
+    background: #1a73e8;  /* Google Blue */
+    color: white;
+}
+
+.btn-sm:first-child:hover {
+    background: #1557b0;
+}
+
+.btn-sm:last-child {
+    background: #ea4335;  /* Google Red */
+    color: white;
+}
+
+.btn-sm:last-child:hover {
+    background: #d33828;
+}
+
+/* Admin Layout Styles */
+.admin-body {
+    margin: 0;
+    background: var(--admin-bg);
+    font-family: 'Inter', sans-serif;
+}
+
+.admin-layout {
+    display: flex;
+    min-height: calc(100vh - 64px); /* Subtract header height */
+}
+
+.admin-content {
+    flex: 1;
+    padding: 2rem;
+}
+
+.content-section {
+    background: var(--admin-card);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.stat-card {
+    background: var(--admin-bg);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.stat-card h3 {
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.stat-card .stat-number {
+    color: var(--admin-header);
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Header Button Styles */
+.header-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.header-actions .btn-secondary {
+    background: #2d2d2d;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    transition: background-color 0.2s;
+}
+
+.header-actions .btn-secondary:hover {
+    background: #3d3d3d;
+}
+
+.header-actions .btn-secondary i {
+    font-size: 0.875rem;
+}
+
+/* Make sure the icons are visible */
+.fa-arrow-left,
+.fa-sign-out-alt {
+    color: #fff;
+    opacity: 0.9;
+}
+
+/* Admin Header */
+.admin-header {
+    background: #212529;
+    color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem;
+    border-radius: 0.75rem;
+}
+
+.admin-header h1 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin: 0;
+    color: #ffffff;  /* Ensure title is white */
+}
+
+.header-actions {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.header-actions .btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    transition: background-color 0.2s;
+    border: none;
+}
+
+.header-actions .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Remove margin from admin container since header is no longer inside it */
+.admin-container {
+    padding: 0 1rem;
+}

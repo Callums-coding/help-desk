@@ -1,0 +1,9 @@
+# Enable mod_rewrite 
+RewriteEngine On 
+RewriteBase / 
+RewriteRule register$ register.php [NC,L] 
+RewriteRule login$ login.php [NC,L] 
+RewriteRule dashboard$ index.php [NC,L] 
+RewriteRule create-ticket$ create_ticket.php [NC,L] 
+RewriteRule admin$ admin.php [NC,L] 
+RewriteRule logout$ logout.php [NC,L] 
