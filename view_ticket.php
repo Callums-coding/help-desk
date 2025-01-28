@@ -1,6 +1,7 @@
 <?php
 session_start();
 include('db.php');
+$db = getDbConnection();
 
 // Check if user is logged in
 if (!isset($_SESSION['user_id'])) {
@@ -15,24 +16,28 @@ if (!isset($_GET['id'])) {
 }
 
 $ticketId = $_GET['id'];
-$db = getDbConnection();
 
-// Get ticket details with user info
+// Fetch the ticket details
 $stmt = $db->prepare('
-    SELECT tickets.*, users.email as user_email , computers.name as computer_name
-    FROM tickets 
-    JOIN users ON tickets.user_id = users.id 
-    JOIN computers ON tickets.computer_id = computers.id
-    WHERE tickets.id = ?
+    SELECT t.*, u.email as user_email, c.name as computer_name 
+    FROM tickets t
+    LEFT JOIN users u ON t.user_id = u.id
+    LEFT JOIN computers c ON t.computer_id = c.id
+    WHERE t.id = ?
 ');
 $stmt->bindValue(1, $ticketId, SQLITE3_INTEGER);
 $result = $stmt->execute();
+
 $ticket = $result->fetchArray(SQLITE3_ASSOC);
 
-// Check permissions
-// Allow the admin to access all tickets
-// Regular users can only access their own tickets
-if (!$ticket || ($ticket['user_id'] != $_SESSION['user_id'] && (!isset($_SESSION['is_admin']) || $_SESSION['is_admin'] != 1))) {
+// Check if the ticket exists
+if (!$ticket) {
+    header('Location: index.php');
+    exit();
+}
+
+// Check if the user is allowed to view the ticket
+if (!$_SESSION['is_admin'] && $ticket['user_id'] != $_SESSION['user_id']) {
     header('Location: index.php');
     exit();
 }

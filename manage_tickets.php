@@ -119,11 +119,7 @@ if ($_SESSION['is_admin']) {
                         <td><?php echo htmlspecialchars($ticket['status']); ?></td>
                         <td>
                             <!-- Allow admins to update all tickets -->
-                            <?php if ($_SESSION['is_admin'] || $ticket['user_id'] == $_SESSION['user_id']): ?>
-                                <a href="view_ticket.php?id=<?php echo $ticket['id']; ?>">Update</a>
-                            <?php else: ?>
-                                <span>Access Denied</span>
-                            <?php endif; ?>
+                            <a href="view_ticket.php?id=<?php echo $ticket['id']; ?>">Update</a>
                             <!-- Allow admins to delete any ticket, users can delete their own tickets -->
                             <?php if ($_SESSION['is_admin'] || $ticket['user_id'] == $_SESSION['user_id']): ?>
                                 <a href="manage_tickets.php?action=delete&id=<?php echo $ticket['id']; ?>" class="delete-ticket" onclick="return confirm('Are you sure you want to delete this ticket?');">
